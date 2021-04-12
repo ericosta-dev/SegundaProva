@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CadastraFragment">
+
+        <Button
+            android:id="@+id/buttonAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="90dp"
+            android:text="@string/buttonCadastrar"
+            app:backgroundTint="#009688"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNameAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/formName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextEsporteAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/cidade"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/editTextNameAltera"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNameAltera" />
+
+        <EditText
+            android:id="@+id/editTextCategoriaAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/estado"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/editTextEsporteAltera"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEsporteAltera" />
+
+        <EditText
+            android:id="@+id/editTextBiotipoAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/descricao"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/editTextCategoriaAltera"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCategoriaAltera" />
+
+        <EditText
+            android:id="@+id/editTextIdadeAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ano"
+            android:inputType="number"
+            android:maxLength="4"
+            app:layout_constraintStart_toStartOf="@+id/editTextBiotipoAltera"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBiotipoAltera" />
+
+        <EditText
+            android:id="@+id/editTextRatingAltera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/nota"
+            android:inputType="number"
+            android:maxLength="2"
+            app:layout_constraintStart_toStartOf="@+id/editTextIdadeAltera"
+            app:layout_constraintTop_toBottomOf="@+id/editTextIdadeAltera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

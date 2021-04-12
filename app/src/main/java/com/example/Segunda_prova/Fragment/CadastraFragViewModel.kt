@@ -1,0 +1,49 @@
+package com.example.prova2pdm
+
+import android.annotation.SuppressLint
+import android.app.Application
+import android.os.AsyncTask
+import androidx.lifecycle.AndroidViewModel
+import androidx.room.Room
+
+class CadastraFragViewModel(application: Application) : AndroidViewModel(application) {
+
+    private var dba: AppDatabase
+
+    init {
+        val db:AppDatabase by lazy {
+            Room.databaseBuilder(application.applicationContext,
+                AppDatabase::class.java, "praia.sqlite")
+                .build()
+        }
+        dba = db
+    }
+
+    var name: String = ""
+    var cidade: String = ""
+    var estado: String = ""
+    var descricao: String = ""
+    var ano: Int = 0
+    var nota: Int = 0
+
+    fun createPraia() {
+        CreatePraiaAsync().execute().get()
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private inner class CreatePraiaAsync() : AsyncTask<Unit, Unit, Unit>() {
+        override fun doInBackground(vararg params: Unit?) {
+            val a = Praia(
+                name,
+                cidade,
+                estado,
+                descricao,
+                ano,
+                nota
+            )
+
+
+            dba.praiaDao().insert(a)
+        }
+    }
+}

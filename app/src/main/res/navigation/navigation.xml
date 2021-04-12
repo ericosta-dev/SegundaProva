@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.prova2pdm.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_cadastraFragment"
+            app:destination="@id/cadastraFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_alteraFragment"
+            app:destination="@id/alteraFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detalhesFragment"
+            app:destination="@id/detalhesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastraFragment"
+        android:name="com.example.prova2pdm.CadastraFragment"
+        android:label="CadastraFragment" />
+    <fragment
+        android:id="@+id/sobreFragment"
+        android:name="com.example.prova2pdm.SobreFragment"
+        android:label="fragment_sobre"
+        tools:layout="@layout/fragment_sobre" />
+    <fragment
+        android:id="@+id/alteraFragment"
+        android:name="com.example.prova2pdm.AlteraFragment"
+        android:label="fragment_altera"
+        tools:layout="@layout/fragment_altera" >
+        <argument
+            android:name="gameid"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.example.prova2pdm.DetalhesFragment"
+        android:label="fragment_detalhes"
+        tools:layout="@layout/fragment_detalhes" />
+</navigation>
